@@ -1,25 +1,22 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity({ name: 'turnos' })
-export class Turno {
+@Entity({ name: 'agendas_dias' })
+export class Agenda_dia {
   @PrimaryGeneratedColumn()
-  id: number;
+  id_agenda: number;
 
   @Column({ type: 'timestamp' })
-  fecha_turno: Date;
-
-  @Column({ nullable: true })
-  notas: string;
+  fecha_agenda: Date;
 
   @Column()
-  tipo_turno: number;
+  estado: number;
 
   @Column()
-  dni_paciente: number;
+  id_turno: number;
 
   @Column({ nullable: true })
   dni_medico: number;
 
   @Column()
-  cancelado: boolean;
+  medico: boolean;
 }

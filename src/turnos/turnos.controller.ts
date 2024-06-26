@@ -30,6 +30,11 @@ export class TurnosController {
     return this.turnosService.findOne(+id);
   }
 
+  @Get('dni/:dni')
+  async findMany(@Param('dni') dni: number) {
+    return this.turnosService.findMany(+dni);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTurnoDto: UpdateTurnoDto) {
     return this.turnosService.update(+id, updateTurnoDto);
